@@ -1,0 +1,83 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+header, footer {
+  text-align: center;
+  padding: 15px;
+  background: #4a6cf7;
+  color: white;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #333;
+  color: white;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* Gallery Grid */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: white;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.caption {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #222;
+  color: #f4f4f4;
+}
+
+.dark-mode header, .dark-mode footer {
+  background: #111;
+}
+
+.dark-mode .card {
+  background: #333;
+}
