@@ -28,7 +28,7 @@ button {
   cursor: pointer;
   background: #333;
   color: white;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 button:hover {
@@ -49,6 +49,7 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   background: white;
+  transition: background 0.3s, color 0.3s;
 }
 
 .card img {
@@ -66,6 +67,8 @@ button:hover {
   padding: 10px;
   text-align: center;
   font-size: 0.9rem;
+  color: #444;
+  transition: color 0.3s;
 }
 
 /* Dark Mode */
@@ -74,10 +77,26 @@ button:hover {
   color: #f4f4f4;
 }
 
-.dark-mode header, .dark-mode footer {
+.dark-mode header,
+.dark-mode footer {
   background: #111;
+  color: #f4f4f4;
 }
 
 .dark-mode .card {
   background: #333;
+  color: #f4f4f4;
+}
+
+.dark-mode .caption {
+  color: #ddd;
+}
+
+.dark-mode button {
+  background: #eee;
+  color: #222;
+}
+
+.dark-mode button:hover {
+  background: #ccc;
 }
