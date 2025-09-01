@@ -1,46 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleDarkModeBtn = document.getElementById('toggleDarkMode');
-  const showFavoritesBtn = document.getElementById('showFavorites');
-  const gallery = document.getElementById('gallery');
-  let favorites = [];
+// Image data array with "favorite" flag
+const images = [
+  { url: "https://picsum.photos/400/300?random=1", caption: "Sunset View", favorite: true },
+  { url: "https://picsum.photos/400/300?random=2", caption: "Mountain Hike", favorite: false },
+  { url: "https://picsum.photos/400/300?random=3", caption: "City Lights", favorite: true },
+  { url: "https://picsum.photos/400/300?random=4", caption: "Calm Beach", favorite: false },
+  { url: "https://picsum.photos/400/300?random=5", caption: "Forest Trail", favorite: true },
+  { url: "https://picsum.photos/400/300?random=6", caption: "Desert Safari", favorite: false },
+];
 
-  // Dark Mode Toggle
-  toggleDarkModeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
+// Selectors
+const gallery = document.getElementById("gallery");
+const toggleModeBtn = document.getElementById("toggle-mode");
+const filterFavoritesBtn = document.getElementById("filter-favorites");
 
-  // Mark favorites by clicking on gallery items
-  gallery.addEventListener('click', (e) => {
-    const item = e.target.closest('.gallery-item');
-    if (!item) return;
+// State
+let showFavorites = false;
 
-    const title = item.dataset.title;
-    const url = item.dataset.url;
+// Function to render gallery
+function renderGallery() {
+  gallery.innerHTML = ""; // Clear old content
 
-    if (favorites.find(fav => fav.title === title)) {
-      favorites = favorites.filter(fav => fav.title !== title);
-      item.style.border = "none";
-    } else {
-      favorites.push({ title, url });
-      item.style.border = "3px solid red";
+  images.forEach(img => {
+    if (!showFavorites || img.favorite) {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${img.url}" alt="${img.caption}">
+        <div class="caption">${img.caption}</div>
+      `;
+      gallery.appendChild(card);
     }
   });
+}
 
-  // Show Favorites
-  showFavoritesBtn.addEventListener('click', () => {
-    gallery.innerHTML = "";
-    if (favorites.length === 0) {
-      gallery.innerHTML = "<p>No favorites selected.</p>";
-    } else {
-      favorites.forEach(fav => {
-        const div = document.createElement('div');
-        div.classList.add('gallery-item');
-        div.innerHTML = `
-          <img src="${fav.url}" alt="${fav.title}">
-          <p>${fav.title}</p>
-        `;
-        gallery.appendChild(div);
-      });
-    }
-  });
+// Initial render
+renderGallery();
+
+// Toggle Dark Mode
+toggleModeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// Filter Favorites
+filterFavoritesBtn.addEventListener("click", () => {
+  showFavorites = !showFavorites;
+  filterFavoritesBtn.textContent = showFavorites ? "Show All" : "Show Favorites Only";
+  renderGallery();
 });
