@@ -1,86 +1,83 @@
-/* Base Styles */
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  box-sizing: border-box;
+}
+
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
-header {
-  background-color: #4285f4;
-  color: white;
-  padding: 15px;
+header, footer {
   text-align: center;
-}
-
-header h1 {
-  margin: 0;
-}
-
-.controls {
-  margin-top: 10px;
+  padding: 15px;
+  background: #4a6cf7;
+  color: white;
 }
 
 button {
   margin: 5px;
-  padding: 8px 15px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  background: #333;
+  color: white;
+  transition: background 0.3s;
 }
 
 button:hover {
-  opacity: 0.9;
+  background: #555;
 }
 
-.gallery {
+/* Gallery Grid */
+#gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
-.gallery-item {
-  background: white;
-  border-radius: 8px;
+.card {
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: white;
 }
 
-.gallery-item:hover {
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
   transform: scale(1.05);
 }
 
-.gallery-item img {
-  width: 100%;
-  height: auto;
-}
-
-.gallery-item p {
-  margin: 10px;
+.caption {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 /* Dark Mode */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+.dark-mode {
+  background: #222;
+  color: #f4f4f4;
 }
 
-body.dark-mode header {
-  background-color: #1e1e1e;
+.dark-mode header, .dark-mode footer {
+  background: #111;
 }
 
-body.dark-mode .gallery {
-  background-color: #1a1a1a;
-}
-
-body.dark-mode .gallery-item {
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  color: #fff;
+.dark-mode .card {
+  background: #333;
 }
