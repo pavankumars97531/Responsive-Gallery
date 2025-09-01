@@ -4,19 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Gallery</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <h1>Responsive Gallery</h1>
-    <div class="buttons">
-      <button id="toggle-dark">Toggle Dark Mode</button>
-      <button id="show-fav">Show Favorites</button>
+    <div class="controls">
+      <button id="toggleDarkMode">Toggle Dark Mode</button>
+      <button id="showFavorites">Show Favorites</button>
     </div>
   </header>
 
-  <!-- THIS is what script.js needs -->
-  <main id="gallery"></main>
+  <main>
+    <div class="gallery" id="gallery">
+      <div class="gallery-item" data-title="Mountain View" data-url="https://picsum.photos/id/1015/600/400">
+        <img src="https://picsum.photos/id/1015/600/400" alt="Mountain View">
+        <p>Mountain View</p>
+      </div>
+      <div class="gallery-item" data-title="Forest Path" data-url="https://picsum.photos/id/1018/600/400">
+        <img src="https://picsum.photos/id/1018/600/400" alt="Forest Path">
+        <p>Forest Path</p>
+      </div>
+      <div class="gallery-item" data-title="Majestic Eagle" data-url="https://picsum.photos/id/1025/600/400">
+        <img src="https://picsum.photos/id/1025/600/400" alt="Majestic Eagle">
+        <p>Majestic Eagle</p>
+      </div>
+      <div class="gallery-item" data-title="Calm Lake" data-url="https://picsum.photos/id/103/600/400">
+        <img src="https://picsum.photos/id/103/600/400" alt="Calm Lake">
+        <p>Calm Lake</p>
+      </div>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
