@@ -1,11 +1,11 @@
-// Image data array with "favorite" flag
+// Image data array with "favorite" flag (using stable Picsum IDs)
 const images = [
-  { url: "https://picsum.photos/400/300?random=1", caption: "Sunset View", favorite: true },
-  { url: "https://picsum.photos/400/300?random=2", caption: "Mountain Hike", favorite: false },
-  { url: "https://picsum.photos/400/300?random=3", caption: "City Lights", favorite: true },
-  { url: "https://picsum.photos/400/300?random=4", caption: "Calm Beach", favorite: false },
-  { url: "https://picsum.photos/400/300?random=5", caption: "Forest Trail", favorite: true },
-  { url: "https://picsum.photos/400/300?random=6", caption: "Desert Safari", favorite: false },
+  { url: "https://picsum.photos/id/237/400/300", caption: "Cute Dog", favorite: true },
+  { url: "https://picsum.photos/id/1015/400/300", caption: "Mountain Hike", favorite: false },
+  { url: "https://picsum.photos/id/1011/400/300", caption: "City Skyline", favorite: true },
+  { url: "https://picsum.photos/id/1025/400/300", caption: "Colorful Parrot", favorite: false },
+  { url: "https://picsum.photos/id/1043/400/300", caption: "Forest Trail", favorite: true },
+  { url: "https://picsum.photos/id/1069/400/300", caption: "Calm Beach", favorite: false },
 ];
 
 // Selectors
