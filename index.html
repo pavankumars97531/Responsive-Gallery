@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Photo Gallery</title>
+  <title>Responsive Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>My Responsive Photo Gallery</h1>
-    <button id="toggle-mode">Toggle Dark Mode</button>
-    <button id="filter-favorites">Show Favorites Only</button>
+    <h1>Responsive Gallery</h1>
+    <div class="buttons">
+      <button id="toggle-dark">Toggle Dark Mode</button>
+      <button id="show-fav">Show Favorites</button>
+    </div>
   </header>
 
-  <main id="gallery">
-    <!-- JavaScript will render images here -->
-  </main>
-
-  <footer>
-    <p>Built with ❤️ using Flexbox, Grid, and JavaScript.</p>
-  </footer>
+  <!-- THIS is what script.js needs -->
+  <main id="gallery"></main>
 
   <script src="script.js"></script>
 </body>
